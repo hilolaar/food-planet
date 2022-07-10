@@ -1,23 +1,43 @@
 import React from "react";
 import styles from "./menu.module.css";
-import images from "../../img";
-import defaultText from "../../defaultText/defaultText";
 import {Counter} from "../counter/counter";
+import AddButton from "../AddButton/AddButton";
 
-const SingleMenuItem = () => {
+
+
+const SingleMenuItem = (props) => {
+
+    const addCart = () => {
+        let productsFromLocalStorage = {};
+        const product = {};
+
+        if (localStorage.getItem('burgers')){
+            productsFromLocalStorage = JSON.parse(localStorage.getItem('cart'));
+        }
+
+        product[props.id] = {
+            ...props
+        }
+
+        localStorage.setItem('cart', JSON.stringify({...productsFromLocalStorage, ...product}));
+    }
+
+
     return (
-        <div className={styles.singleItem}>
-            <div className={styles.singleItemContent}>
-                <img className={styles.singleItemSize} src={images.singleItem} alt=""/>
-                <h4 className={styles.properSpacing}>Мексиканская</h4>
-                <span className={styles.textAlign}>{defaultText.singleMenuItemDesc}</span>
-                <h4 className={styles.properSpacing}>{defaultText.singleMenuItemPrice}</h4>
-                <div>
-                    <Counter/>
+            <div className={styles.singleItem}>
+                <div className={styles.singleItemContent}>
+                    <img className={styles.singleItemSize} src={props.product.img_url} alt=""/>
+                    <h4 className={styles.properSpacing}>{props.product.name}</h4>
+                    <span className={styles.textAlign}>{props.product.desc}</span>
+                    <h4 className={styles.properSpacing}>{props.product.price}</h4>
                 </div>
+                <AddButton
+                    addCart={addCart}
+                />
+                <Counter/>
             </div>
-        </div>
-    )
+        )
+
 }
 
 export default SingleMenuItem;

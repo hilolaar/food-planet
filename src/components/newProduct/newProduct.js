@@ -1,21 +1,19 @@
-import React , {useEffect, useState} from "react";
+import React, {useEffect , useState} from "react";
 import styles from "./newproduct.module.css";
 import SingleProduct from "./singleProduct";
-import {BASE_URL} from "../../constants";
+import {BASE_URL} from "./../../constants/index";
 
 const NewProduct = () => {
-    const [products, setProducts] = useState([]);
+    const [burgers, setBurgers] = useState([]);
 
-    const getProducts = () => {
-        const url = BASE_URL + '/newProducts';
-
+    const getBurgers = () => {
+        let url = BASE_URL + 'burgers';
         fetch(url)
             .then(response => response.json())
-            .then(data => setProducts(data))
+            .then(data => setBurgers(data));
     }
 
-    useEffect(getProducts, []);
-
+    useEffect(getBurgers, []);
 
     return (
         <>
@@ -31,9 +29,9 @@ const NewProduct = () => {
                                         <li>Бургер</li>
                                         <li>Суши</li>
                                         <li>Роллы</li>
-                                        <li>Салаты.</li>
-                                        <li>Десерты.</li>
-                                        <li>Напитки.</li>
+                                        <li>Салаты</li>
+                                        <li>Десерты</li>
+                                        <li>Напитки</li>
                                     </ul>
                                 </nav>
                             </div>
@@ -42,16 +40,9 @@ const NewProduct = () => {
                 </div>
                 <div className={styles.sectionThree}>
                     {
-                        products.map((item) => {
+                        burgers.map((product, num) => {
                             return (
-                                <NewProduct
-                                    key={item.id}
-                                    name={item.name}
-                                    img={item.img_url}
-                                    price={item.price}
-                                    id={item.id}
-                                    desc={item.desc}
-                                />
+                                <SingleProduct product={product}/>
                             )
                         })
                     }
@@ -62,3 +53,5 @@ const NewProduct = () => {
 }
 
 export default NewProduct;
+
+

@@ -1,0 +1,53 @@
+.subNav{
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    height: 320px;
+}
+
+.subNavLeft{
+    width: 29%;
+    height: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subNavRight{
+    width: 27%;
+    height: 318px;
+}
+
+.subNavText{
+    width: 85%;
+    height: 80%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+
+.subNavImg{
+    width: 450px;
+    height: 330px;
+}
+
+.boldText{
+    font-size: 28px;
+    font-weight: 900;
+    color: #254F4C;
+}
+
+.darkColor{
+    color: #254F4C;
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.menuBtn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color: #FF583E;
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+
+.product_table {
+    background-color: #EDE8DC;
+    width: 95%;
+    /*margin: 30px auto 0;*/
+margin-top: -20px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+   /* align-items: center;*/
+    justify-content: center;
+}
+
+.product_item{
+    background-color: pink;
+   text-align: center;
+
+}
+.imagePr{
+    width: 70px;
+    height: 64px;
+    margin-left: 40px;
+}
+h4{
+    text-align: center;
+}

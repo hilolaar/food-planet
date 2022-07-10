@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 
 const Footer = () => {
     return (
-        <>
+        <div className={styles.generalFooter}>
             <div className={styles.footerAligner}>
                 <div className={styles.footerAligner2}>
                     <div className={styles.footerContent}>
@@ -35,7 +35,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

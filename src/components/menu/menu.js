@@ -1,8 +1,21 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./menu.module.css";
 import SingleMenuItem from "./singleMenuItem";
+import {BASE_URL} from "../../constants";
+
 
 const Menu = () => {
+
+    const [pizza, setPizzas] = useState([]);
+
+    const getPizzas = () => {
+        let url = BASE_URL + 'pizza';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => setPizzas(data));
+    }
+
+    useEffect(getPizzas, []);
     return (
         <div className={styles.viewport}>
             <div className={styles.sectionOne}>
@@ -31,11 +44,15 @@ const Menu = () => {
                     <option value="default">По умолчанию</option>
                 </select>
             </div>
-            <div className={styles.MenuLineup}>
-                <SingleMenuItem/>
-                <SingleMenuItem/>
-                <SingleMenuItem/>
-                <SingleMenuItem/>
+            <div className={styles.MenuLine}>
+                {
+                    pizza.map((product, num) => {
+                        return (
+                            <SingleMenuItem product={product}/>
+
+                        )
+                    })
+                }
             </div>
             <button className={styles.extendBtn}>ПОКАЗАТЬ ЕЩЕ</button>
         </div>

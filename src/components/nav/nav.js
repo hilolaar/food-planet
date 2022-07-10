@@ -32,7 +32,7 @@ const Nav = () => {
                                 </div>
                                 <li>+996500405988</li>
                             </NavLink>
-                            <NavLink to="cart">
+                            <NavLink to="/cart">
                                 <div className={styles.navImg2}>
                                     <img src={images.cartLogo}/>
                                 </div>
@@ -40,18 +40,6 @@ const Nav = () => {
                             </NavLink>
                         </ul>
                     </nav>
-                </div>
-                <div className={styles.subNav}>
-                    <div className={styles.subNavLeft}>
-                        <div className={styles.subNavText}>
-                            <p className={styles.boldText}>{defaultText.subNavTitle}</p>
-                            <p className={styles.darkColor}>{defaultText.subNavDesc}</p>
-                            <button className={styles.menuBtn}>ПЕРЕЙТИ В МЕНЮ ➤</button>
-                        </div>
-                    </div>
-                    <div className={styles.subNavRight}>
-                        <img className={styles.subNavImg} src={images.subNavLogo}/>
-                    </div>
                 </div>
             </div>
         </>
