@@ -4,19 +4,15 @@ import Main from "./Pages/main/main";
 import Nav from "./components/nav/nav";
 import Footer from "./components/footer/footer";
 import CartPage from "./Pages/CartPage/CartPage";
-import ProductPage from "./Pages/ProductPage/ProductPage";
 
 function App() {
     return (
         <div>
             <Nav/>
-
                 <Routes>
-                    <Route path="/cart" element={<CartPage/>}/>
                     <Route path="/" element={<Main/>}/>
+                    <Route path="/cart" element={<CartPage/>}/>
                 </Routes>
-
-
             <Footer/>
         </div>
     )

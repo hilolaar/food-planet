@@ -9,13 +9,15 @@ const Menu = () => {
     const [pizza, setPizzas] = useState([]);
 
     const getPizzas = () => {
-        let url = BASE_URL + 'pizza';
+        let url = BASE_URL  + 'pizza';
         fetch(url)
             .then(response => response.json())
             .then(data => setPizzas(data));
     }
 
     useEffect(getPizzas, []);
+
+
     return (
         <div className={styles.viewport}>
             <div className={styles.sectionOne}>

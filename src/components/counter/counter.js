@@ -3,6 +3,10 @@ import styles from "../newProduct/newproduct.module.css";
 
 export const Counter = () => {
     const [count, setCount] = useState(0);
+    if ({
+        setCount
+    })
+
     return (
         <>
             <div className={styles.btnFrame}>
@@ -13,6 +17,7 @@ export const Counter = () => {
                 <span>{count}</span>
                 <button className={styles.btnCount} onClick={() => setCount(prevState => prevState + 1)}>+</button>
             </div>
+
             <div>
                 {/*<button className={styles.btnCart}>В КОРЗИНУ</button>*/}
             </div>

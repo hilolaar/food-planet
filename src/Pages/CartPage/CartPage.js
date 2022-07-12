@@ -1,75 +1,69 @@
-// import React ,{ useEffect, useState}from "react";
-// import styles from "./CartPage.module.css";
-// import {BASE_URL} from "../../constants";
-// import SingleMenuItem from "../../components/menu/singleMenuItem";
-//
-// const CartPage = () => {
-//     const [products, setProducts] = useState([]);
-//
-//     const getProductsFromStorage = () => {
-//         let url = BASE_URL + 'products';
-//         fetch(url)
-//             .then(response => response.json())
-//             .then(data => setProducts(data));
-//     }
-//
-//
-//
-//     useEffect(getProductsFromStorage, []);
-//
-//
-//
-//     return (
-//         <div className="cart">
-//             <h4>Корзина</h4>
-//             <div className={styles.product_table}>
-//                 <table>
-//                     <tbody>
-//                     <tr>
-//                         <th>№</th>
-//                         <th>Наименование</th>
-//                         <th>Товар</th>
-//                         <th>Количество</th>
-//                         <th>Цена</th>
-//                         <th>Удалить</th>
-//                     </tr>
-//                     {/*{
-//                         products.map((product, num)  => {
-//                             return(
-//                                 <tr className={styles.product_item}>
-//                                     <td>1</td>
-//                                     <td>{product.name}</td>
-//                                     <td ><img className={styles.imagePr} src={product.img_url} alt=""/></td>
-//                                     <td>
-//                                         <div>
-//                                             <button>+</button>
-//                                             <span>{products.quantity ? products.quantity : 1}</span>
-//                                             <button>-</button>
-//
-//                                         </div>
-//                                     </td>
-//                                     <td>{product.price}</td>
-//                                 </tr>
-//                             )
-//
-//                     })*/}
-//                     }
-//                     </tbody>
-//
-//                 </table>
-//             </div>
-//
-//
-//         </div>
-// )
-// }
-//
-// export default CartPage;
-//
-//
+import React ,{ useEffect, useState}from "react";
+import styles from "./CartPage.module.css";
+import {BASE_URL} from "../../constants";
+import {Counter} from "../../components/counter/counter";
+
+const CartPage = () => {
+    const [products, setProducts] = useState([]);
+
+    const getProductsFromStorage = () => {
+        let url = BASE_URL + 'products';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => setProducts(data));
+    }
+
+
+    useEffect(getProductsFromStorage, []);
+
+
+    return (
+        <div className="cart">
+            <h4>Корзина</h4>
+            <div className={styles.product_table}>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Наименование</th>
+                        <th>Товар</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+
+                    </tr>
+                    {
+                        products.map((product, num)  => {
+                            return(
+                                <tr className={styles.product_item}>
+
+                                    <td>{product.name}</td>
+                                    <td ><img className={styles.imagePr} src={product.img_url} alt=""/></td>
+                                    <td>
+                                        <div>
+                                            <Counter/>
+                                        </div>
+                                    </td>
+                                    <td>{product.price}</td>
+                                </tr>
+                            )
+                    })
+                    }
+                    </tbody>
+
+                </table>
+            </div>
+
+
+        </div>
+)
+}
+
+export default CartPage;
 
 
 
+
+
+/*
 import React from 'react';
 import styles from './CartPage.module.css'
 import {Link} from "react-router-dom";
@@ -139,3 +133,4 @@ const CartPage = () => {
 };
 
 export default CartPage;
+*/

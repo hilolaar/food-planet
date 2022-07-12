@@ -1,4 +1,3 @@
-/*
 import React, {useEffect, useState} from 'react';
 import Product from "../../components/Product/Product";
 import {BASE_URL} from "../../constants";
@@ -11,7 +10,7 @@ const ProductPage = () => {
 
     const getProducts = () => {
 
-        const url = BASE_URL + '/goods';
+        const url = BASE_URL + '/products';
 
         fetch(url)
             .then(response => response.json())
@@ -35,9 +34,8 @@ const ProductPage = () => {
                         )
                     })
                 }
-            <Link to="/cart-page"><button className={styles.cart_button}>Корзина</button></Link>
         </div>
     );
 };
 
-export default ProductPage;*/
+export default ProductPage;

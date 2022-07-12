@@ -52,6 +52,8 @@ const NewProduct = () => {
     )
 }
 
+// fetch, axios
+
 export default NewProduct;
 
 

@@ -9,14 +9,14 @@ const SingleMenuItem = (props) => {
 
     const addCart = () => {
         let productsFromLocalStorage = {};
-        if( localStorage.getItem('cart')){
-             productsFromLocalStorage = JSON.stringify( localStorage.getItem('cart'));
+        if (localStorage.getItem('cart')){
+            productsFromLocalStorage = JSON.parse(localStorage.getItem('cart'));
         }
 
         const product = {}
         product[props.id]={
             ...props
-        }
+        };
 
         localStorage.setItem('cart', JSON.stringify({...productsFromLocalStorage, ...product}));
 
@@ -33,9 +33,10 @@ const SingleMenuItem = (props) => {
                     <h4 className={styles.properSpacing}>{props.product.price}</h4>
                 </div>
                 <Counter/>
-                <button onClick={addCart}>
+                {/*<button onClick={addCart}>
                     В корзину
-                </button>
+                </button>*/}
+                <AddButton/>
 
             </div>
         )
