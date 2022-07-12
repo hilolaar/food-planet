@@ -1,3 +1,4 @@
+/*
 import React, {useEffect, useState} from 'react';
 import Product from "../../components/Product/Product";
 import {BASE_URL} from "../../constants";
@@ -39,4 +40,4 @@ const ProductPage = () => {
     );
 };
 
-export default ProductPage;
+export default ProductPage;*/
