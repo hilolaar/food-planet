@@ -9,11 +9,5 @@
 .wrapper{
     display: flex;
     flex-wrap: wrap;
-    gap:15px;
-}
-
-.wrapper a{
-    font-size: 25px;
-    font-weight: 700;
-    color:darkblue;
+    gap: 15px;
 }

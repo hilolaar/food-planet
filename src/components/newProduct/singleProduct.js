@@ -1,8 +1,9 @@
-import React, {useState} from "react";
-
+import React from "react";
 import defaultText from "../../defaultText/defaultText";
 import styles from "./newproduct.module.css";
 import {Counter} from "../counter/counter";
+import AddButton from "../AddButton/AddButton";
+
 
 const SingleProduct = (props) => {
 
@@ -16,6 +17,7 @@ const SingleProduct = (props) => {
                 <div>
                     <Counter/>
                 </div>
+                <AddButton/>
             </div>
         </div>
     )

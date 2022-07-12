@@ -31,10 +31,11 @@ const SingleMenuItem = (props) => {
                     <span className={styles.textAlign}>{props.product.desc}</span>
                     <h4 className={styles.properSpacing}>{props.product.price}</h4>
                 </div>
+                <Counter/>
                 <AddButton
                     addCart={addCart}
                 />
-                <Counter/>
+
             </div>
         )
 
